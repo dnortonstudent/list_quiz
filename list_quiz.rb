@@ -6,5 +6,24 @@ def three_even?(list)
         end
         z += 1
     end
+    return false
 end
 
+puts three_even?([2, 3, 2])
+
+def bigger_two(nums1, nums2)
+    returnlist = []
+    if (nums1[0] + nums1[1]) > (nums2[0] + nums2[1])
+        returnlist.push(nums1[0])
+        returnlist.push(nums1[1])
+    elsif (nums1[0] + nums1[1]) < (nums2[0] + nums2[1])
+        returnlist.push(nums2[0])
+        returnlist.push(nums2[1])
+    else
+        returnlist.push(nums1[0])
+        returnlist.push(nums1[1])
+    end
+    return returnlist
+end
+
+print bigger_two([1, 2], [2, 4])
