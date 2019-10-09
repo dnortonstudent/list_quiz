@@ -29,22 +29,25 @@ end
 print bigger_two([1, 2], [2, 4])
 
 def series_up(n)
+    # added size value
+    size = n
     currentvalue = 1
     currentstep = 1
     endlist = []
-    sum = n*(n+1)/2
-    (sum).times do |x|
-        if currentvalue <= currentstep
+    # deleted sum formula
+    size.times do |x|
+        currentvalue = 1
+        #replaced if statement with while statement to increase and push currentvalues
+        while currentvalue <= currentstep
             endlist.push(currentvalue)
             currentvalue += 1
+            #deleted if statement that would set currentvalue to 1, as it is now outside of the while loop
         end
-        if currentvalue = currentstep
-            currentstep += 1
-            currentvalue = 1
-        end
+        currentstep += 1
     end
     return endlist
 end
 
-
-  puts series_up(4)
+# the issue with this loop was that I was using an if statement instead of a while statement. Once the loop ran once, it would return '1' and then end.
+  
+print series_up(4)
